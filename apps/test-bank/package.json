@@ -1,0 +1,8 @@
+{
+  "name": "@test-bank/test-bank",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "test-bank"
+  }
+}

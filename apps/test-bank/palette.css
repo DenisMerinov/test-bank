@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Theme specific variables */
+    --bg-primary: 0 0% 100%;
+    --bg-secondary: 0 0% 97%;
+    --bg-tertiary: 45 30% 92%;
+    --text-primary: 0 0% 25%;
+    --text-secondary: 0 0% 54%;
+    --text-tertiary: 0 0% 53%;
+
+    --brand: 127 61% 44%;
+    --brand-light: 127 61% 80%;
+    /* Common variables */
+    --border-muted: hsl(var(--text-primary) / 0.03);
+
+    /* Status colors */
+    --danger: 0 100% 50%; /* #FF2828 */
+    --info: 196 100% 50%; /* #00B3FF */
+    --success: 144 100% 37%; /* #00BC6C */
+    --muted: 0 0% 64%; /* #A4A4A4 */
+    --warning: 35 100% 60%; /* #FFA31A */
+    --error: 4 90% 58%; /* #F44336 */
+    /* Chart colors */
+    --chart-1: 155 100% 38%;
+  }
+
+  .dark {
+    --bg-primary: 0 3% 7%;
+    --bg-secondary: 0 2% 11%;
+    --bg-tertiary: 0 1% 14%;
+    --text-primary: 44 100% 98%;
+    --text-secondary: 45 43% 95%;
+    --text-tertiary: 45 3% 51%;
+    --brand: 155 100% 38%;
+  }
+}

@@ -48,6 +48,24 @@ module.exports = {
         special:
           '0px 0px 1px 0px #2CB43C1A, 0px 2px 2px 0px #2CB43C17, 1px 4px 2px 0px #2CB43C0D, 2px 7px 3px 0px #2CB43C03, 2px 11px 3px 0px #2CB43C00',
       },
+      keyframes: {
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '20%': { transform: 'translateX(-5px)' },
+          '40%': { transform: 'translateX(5px)' },
+          '60%': { transform: 'translateX(-5px)' },
+          '80%': { transform: 'translateX(5px)' },
+        },
+        pop: {
+          '0%': { transform: 'scale(1)' },
+          '70%': { transform: 'scale(1.1)' },
+          '100%': { transform: 'scale(1)' },
+        },
+      },
+      animation: {
+        shake: 'shake 0.3s ease-in-out',
+        pop: 'pop 0.5s forwards',
+      },
     },
   },
   plugins: [require('tailwindcss-animate'), require('tailwindcss-radix')()],

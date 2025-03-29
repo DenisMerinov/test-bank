@@ -35,7 +35,9 @@ export const AccountPage = () => {
             <div className="mt-8 px-3">
               <PersonalCard size="sm" />
               <div className="flex justify-end gap-2 mt-6">
-                <Button variant="outline">Switch Accounts</Button>
+                <Button variant="outline" rounded="50">
+                  Switch Accounts
+                </Button>
                 <Button rounded="50">See Details</Button>
               </div>
             </div>

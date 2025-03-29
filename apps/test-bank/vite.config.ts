@@ -9,6 +9,7 @@ export default defineConfig(() => ({
   server: {
     port: 4200,
     host: 'localhost',
+    allowedHosts: ['large-prompt-crane.ngrok-free.app'],
   },
   preview: {
     port: 4300,

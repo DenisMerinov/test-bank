@@ -1,6 +1,7 @@
 import { cn } from '../lib/utils';
 import CardChipIcon from '../shared/assets/icons/card-chip.svg';
 import MasterCardIcon from '../shared/assets/icons/mastercard.svg';
+import Card from '../shared/assets/images/card.png';
 
 const DotsBlock = ({ size }: { size?: 'md' | 'sm' }) => {
   return (
@@ -40,6 +41,11 @@ export const PersonalCard = ({ size = 'md' }: { size?: 'md' | 'sm' }) => {
         'h-[220px] bg-brand rounded-xl px-[26px] py-8',
         size === 'sm' && 'h-[170px] p-4'
       )}
+      style={{
+        backgroundImage: `url(${Card})`,
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}
     >
       <div className="flex justify-between h-full">
         <div className="flex flex-col gap-2">

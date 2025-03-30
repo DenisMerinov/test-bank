@@ -85,7 +85,7 @@ export function PinInput() {
 
       <div
         className={cn(
-          'flex gap-4 mb-4 relative',
+          'flex gap-4  relative',
           isValid === false ? 'animate-shake' : '',
           isValid === true ? 'animate-pop' : ''
         )}
@@ -106,7 +106,7 @@ export function PinInput() {
       </div>
 
       {/* Виртуальная клавиатура */}
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-3 gap-4 mt-8">
         {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map((digit) =>
           renderKey(digit, () => handleDigitClick(digit))
         )}

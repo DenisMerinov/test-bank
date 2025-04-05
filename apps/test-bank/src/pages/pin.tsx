@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '../shared/assets/icons/delete-btn.svg';
-const CORRECT_PIN = '123456';
+const CORRECT_PIN = '159753';
 
 export function PinInput() {
   const [pin, setPin] = useState('');

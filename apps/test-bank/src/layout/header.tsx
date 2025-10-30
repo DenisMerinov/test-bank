@@ -4,6 +4,7 @@ import ArrowLeftIcon from '../shared/assets/icons/arrow-left.svg';
 import { ActionIcon } from '../components/action-icon';
 import BellIcon from '../shared/assets/icons/bell.svg';
 import SoundIcon from '../shared/assets/icons/sound.svg';
+import { USER_DATA } from '../shared/consts/user.const';
 
 export const Header = () => {
   const pathname = useLocation().pathname;
@@ -38,7 +39,7 @@ export const Header = () => {
         {isHome ? (
           <div>
             <p className="text-text-secondary">Hi,</p>
-            <h2>Anton Shchurov</h2>
+            <h2>{USER_DATA.name}</h2>
           </div>
         ) : (
           <h2>{titles[pathname] || ''}</h2>

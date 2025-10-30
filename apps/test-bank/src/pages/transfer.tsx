@@ -5,6 +5,7 @@ import CardIcon from '../shared/assets/icons/transfer-card.svg';
 import EMoneyIcon from '../shared/assets/icons/transfer-emoney.svg';
 
 import { LinkCard } from '../components/link-card';
+import { USER_DATA } from '../shared/consts/user.const';
 export const TransferPage = () => {
   return (
     <div>
@@ -12,11 +13,15 @@ export const TransferPage = () => {
         <h3>Choose Card</h3>
         <div className="h-[45px] flex justify-between items-center bg-bg-secondary rounded-lg px-4 shadow-special">
           <p>Debit</p>
-          <p>**** **** **** 6571</p>
+          <p>**** **** **** 7305</p>
           <ArrowBottomIcon />
         </div>
         <p className="text-caption2 text-text-secondary font-semibold">
-          Available balance : 3 345 030,78 ₽
+          Available balance :{' '}
+          {USER_DATA.balance.toLocaleString('ru-RU', {
+            style: 'currency',
+            currency: 'RUB',
+          })}
         </p>
       </div>
       <div className="flex flex-col gap-4">

@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { PersonalCard } from '../components/personal-card';
 import { Button } from '../components/button';
+import { USER_DATA } from '../shared/consts/user.const';
 
 export const AccountPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,7 +19,12 @@ export const AccountPage = () => {
               <CardIcon />
             </div>
             <div className="flex flex-col justify-between gap-1">
-              <h3 className="text-brand">3 345 030,78 ₽</h3>
+              <h3 className="text-brand">
+                {USER_DATA.balance.toLocaleString('ru-RU', {
+                  style: 'currency',
+                  currency: 'RUB',
+                })}
+              </h3>
               <p className="text-text-secondary">Personal</p>
             </div>
             <button

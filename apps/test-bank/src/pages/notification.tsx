@@ -66,40 +66,35 @@ const Block = ({
 const Transaction = () => {
   return (
     <div className="flex flex-col gap-[25px]">
-      <Block title="Today">
-        <TransactionItem
-          type="deposit"
-          sum={formatNumberWithSpaces(368304)}
-          date="5 Apr 2025"
-        />
+      <Block title="19 October">
         <TransactionItem
           type="withdrawal"
-          sum={formatNumberWithSpaces(30000)}
-          date="5 Apr 2025"
+          sum={formatNumberWithSpaces(4000)}
+          date="19 October 2025"
+        />
+        <TransactionItem
+          type="deposit"
+          sum={formatNumberWithSpaces(1500)}
+          date="19 October 2025"
         />
       </Block>
-      <Block title="Yesterday">
+      <Block title="18 October">
         <TransactionItem
           type="withdrawal"
-          sum={formatNumberWithSpaces(86000.45)}
-          date="4 Apr 2025"
-        />
-        <TransactionItem
-          type="deposit"
-          sum={formatNumberWithSpaces(10000)}
-          date="4 Apr 2025"
-        />
-        <TransactionItem
-          type="withdrawal"
-          sum={formatNumberWithSpaces(30000)}
-          date="4 Apr 2025"
+          sum={formatNumberWithSpaces(200)}
+          date="18 October 2025"
         />
       </Block>
-      <Block title="30 March">
+      <Block title="17 October">
         <TransactionItem
-          type="deposit"
-          sum={formatNumberWithSpaces(356567)}
-          date="30 Mar 2025"
+          type="withdrawal"
+          sum={formatNumberWithSpaces(95000)}
+          date="17 October 2025"
+        />
+        <TransactionItem
+          type="withdrawal"
+          sum={formatNumberWithSpaces(4815)}
+          date="17 October 2025"
         />
       </Block>
     </div>

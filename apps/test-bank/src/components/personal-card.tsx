@@ -2,22 +2,35 @@ import { cn } from '../lib/utils';
 import CardChipIcon from '../shared/assets/icons/card-chip.svg';
 import MasterCardIcon from '../shared/assets/icons/mastercard.svg';
 import Card from '../shared/assets/images/card.png';
+import { USER_DATA } from '../shared/consts/user.const';
 
-const DotsBlock = ({ size }: { size?: 'md' | 'sm' }) => {
+const DotsBlock = ({
+  size,
+  includeNumbers,
+}: {
+  size?: 'md' | 'sm';
+  includeNumbers?: string;
+}) => {
   return (
-    <div className="flex gap-1">
-      <div
-        className={cn(
-          'size-[6px] rounded-full bg-text-primary',
-          size === 'sm' && 'size-1'
-        )}
-      />
-      <div
-        className={cn(
-          'size-[6px] rounded-full bg-text-primary',
-          size === 'sm' && 'size-1'
-        )}
-      />
+    <div className="flex gap-1 items-center">
+      {includeNumbers ? (
+        <p className={cn(size === 'sm' && 'text-caption2')}>{includeNumbers}</p>
+      ) : (
+        <>
+          <div
+            className={cn(
+              'size-[6px] rounded-full bg-text-primary',
+              size === 'sm' && 'size-1'
+            )}
+          />
+          <div
+            className={cn(
+              'size-[6px] rounded-full bg-text-primary',
+              size === 'sm' && 'size-1'
+            )}
+          />
+        </>
+      )}
       <div
         className={cn(
           'size-[6px] rounded-full bg-text-primary',
@@ -58,17 +71,19 @@ export const PersonalCard = ({ size = 'md' }: { size?: 'md' | 'sm' }) => {
               size === 'sm' && 'text-base'
             )}
           >
-            3 345 030,78 ₽
+            {USER_DATA.balance.toLocaleString('ru-RU', {
+              style: 'currency',
+              currency: 'RUB',
+            })}
           </p>
           <div className="flex gap-2 items-center">
+            <p className={cn(size === 'sm' && 'text-caption2')}>5536</p>
+            <DotsBlock size={size} includeNumbers="91" />
             <DotsBlock size={size} />
-            <DotsBlock size={size} />
-            <DotsBlock size={size} />
-            <DotsBlock size={size} />
-            <p className={cn(size === 'sm' && 'text-caption2')}>6571</p>
+            <p className={cn(size === 'sm' && 'text-caption2')}>7305</p>
           </div>
           <div className="flex justify-between mt-2">
-            <p className="text-caption2">
+            <p className="text-caption2 mr-2">
               <span>Valid From </span>
               <span className="font-semibold">10/23</span>
             </p>
@@ -79,7 +94,7 @@ export const PersonalCard = ({ size = 'md' }: { size?: 'md' | 'sm' }) => {
           </div>
           <div className="mt-2">
             <p className="mb-[2px] text-caption2">Debit Card</p>
-            <p className="font-semibold">Anton Shchurov</p>
+            <p className="font-semibold">{USER_DATA.name}</p>
           </div>
         </div>
         <div className="flex flex-col justify-between h-full">

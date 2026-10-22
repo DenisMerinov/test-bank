@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import DeleteIcon from '../shared/assets/icons/delete-btn.svg';
 const CORRECT_PIN = '159753';
 
-export function PinInput() {
+export function PinInput({ onSuccess }: { onSuccess?: () => void }) {
   const [pin, setPin] = useState('');
   const [isValid, setIsValid] = useState<boolean | null>(null);
   const [activeKey, setActiveKey] = useState<string | null>(null);
@@ -27,7 +27,11 @@ export function PinInput() {
         setIsValid(true);
         sessionStorage.setItem('isPinValid', 'true');
         setTimeout(() => {
-          navigate('/');
+          if (onSuccess) {
+            onSuccess();
+          } else {
+            navigate('/');
+          }
         }, 1000);
       } else {
         setIsValid(false);

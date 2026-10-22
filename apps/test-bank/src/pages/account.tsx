@@ -4,10 +4,11 @@ import { useState } from 'react';
 import { cn } from '../lib/utils';
 import { PersonalCard } from '../components/personal-card';
 import { Button } from '../components/button';
-import { USER_DATA } from '../shared/consts/user.const';
+import { useUser } from '../shared/context/user-context';
 
 export const AccountPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { user, formatMoney } = useUser();
 
   return (
     <div className="flex flex-col h-full">
@@ -20,10 +21,7 @@ export const AccountPage = () => {
             </div>
             <div className="flex flex-col justify-between gap-1">
               <h3 className="text-brand">
-                {USER_DATA.balance.toLocaleString('ru-RU', {
-                  style: 'currency',
-                  currency: 'RUB',
-                })}
+                {formatMoney(user.balance)}
               </h3>
               <p className="text-text-secondary">Personal</p>
             </div>

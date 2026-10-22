@@ -2,6 +2,7 @@ import { RouterProvider } from 'react-router-dom';
 import { router } from '../router';
 import WebApp from '@twa-dev/sdk';
 import { useEffect } from 'react';
+import { UserProvider } from '../shared/context/user-context';
 
 export function App() {
   useEffect(() => {
@@ -21,7 +22,11 @@ export function App() {
       }
     }
   }, []);
-  return <RouterProvider router={router} />;
+  return (
+    <UserProvider>
+      <RouterProvider router={router} />
+    </UserProvider>
+  );
 }
 
 export default App;

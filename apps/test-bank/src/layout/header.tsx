@@ -4,16 +4,18 @@ import ArrowLeftIcon from '../shared/assets/icons/arrow-left.svg';
 import { ActionIcon } from '../components/action-icon';
 import BellIcon from '../shared/assets/icons/bell.svg';
 import SoundIcon from '../shared/assets/icons/sound.svg';
-import { USER_DATA } from '../shared/consts/user.const';
+import { useUser } from '../shared/context/user-context';
 
 export const Header = () => {
   const pathname = useLocation().pathname;
   const navigate = useNavigate();
+  const { user } = useUser();
 
   const titles: Record<string, string> = {
     '/transfer': 'Transfer',
     '/account': 'Accounts',
     '/settings': 'Settings',
+    '/app-info': 'App Information',
     '/notification': 'Notification',
   };
 
@@ -39,7 +41,7 @@ export const Header = () => {
         {isHome ? (
           <div>
             <p className="text-text-secondary">Hi,</p>
-            <h2>{USER_DATA.name}</h2>
+            <h2>{user.name}</h2>
           </div>
         ) : (
           <h2>{titles[pathname] || ''}</h2>

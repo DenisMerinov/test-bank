@@ -3,6 +3,7 @@ import { BaseLayout } from './layout/base-layout';
 import { HomePage } from './pages/home';
 import { SettingsPage } from './pages/settings';
 import { AccountPage } from './pages/account';
+import { AppInfoPage } from './pages/app-info';
 import { TransferPage } from './pages/transfer';
 import { NotificationPage } from './pages/notification';
 import { PinPage } from './pages/pin';
@@ -21,6 +22,7 @@ export const router = createBrowserRouter([
       { path: '/transfer', element: <TransferPage /> },
       { path: '/account', element: <AccountPage /> },
       { path: '/settings', element: <SettingsPage /> },
+      { path: '/app-info', element: <AppInfoPage /> },
       { path: '/notification', element: <NotificationPage /> },
       { path: '*', element: <Navigate to="/" /> },
     ],

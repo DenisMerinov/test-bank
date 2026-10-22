@@ -2,7 +2,7 @@ import { cn } from '../lib/utils';
 import CardChipIcon from '../shared/assets/icons/card-chip.svg';
 import MasterCardIcon from '../shared/assets/icons/mastercard.svg';
 import Card from '../shared/assets/images/card.png';
-import { USER_DATA } from '../shared/consts/user.const';
+import { useUser } from '../shared/context/user-context';
 
 const DotsBlock = ({
   size,
@@ -48,6 +48,8 @@ const DotsBlock = ({
 };
 
 export const PersonalCard = ({ size = 'md' }: { size?: 'md' | 'sm' }) => {
+  const { user, formatMoney } = useUser();
+
   return (
     <div
       className={cn(
@@ -71,10 +73,7 @@ export const PersonalCard = ({ size = 'md' }: { size?: 'md' | 'sm' }) => {
               size === 'sm' && 'text-base'
             )}
           >
-            {USER_DATA.balance.toLocaleString('ru-RU', {
-              style: 'currency',
-              currency: 'RUB',
-            })}
+            {formatMoney(user.balance)}
           </p>
           <div className="flex gap-2 items-center">
             <p className={cn(size === 'sm' && 'text-caption2')}>5536</p>
@@ -94,7 +93,7 @@ export const PersonalCard = ({ size = 'md' }: { size?: 'md' | 'sm' }) => {
           </div>
           <div className="mt-2">
             <p className="mb-[2px] text-caption2">Debit Card</p>
-            <p className="font-semibold">{USER_DATA.name}</p>
+            <p className="font-semibold">{user.name}</p>
           </div>
         </div>
         <div className="flex flex-col justify-between h-full">

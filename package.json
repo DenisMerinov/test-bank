@@ -65,6 +65,9 @@
     "vite-plugin-svgr": "^4.3.0",
     "vitest": "^3.0.0"
   },
+  "overrides": {
+    "axios": "^1.20.0"
+  },
   "workspaces": [
     "apps/*"
   ]

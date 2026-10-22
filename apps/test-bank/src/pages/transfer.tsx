@@ -5,8 +5,10 @@ import CardIcon from '../shared/assets/icons/transfer-card.svg';
 import EMoneyIcon from '../shared/assets/icons/transfer-emoney.svg';
 
 import { LinkCard } from '../components/link-card';
-import { USER_DATA } from '../shared/consts/user.const';
+import { useUser } from '../shared/context/user-context';
 export const TransferPage = () => {
+  const { user, formatMoney } = useUser();
+
   return (
     <div>
       <div className="flex flex-col gap-4 mb-10">
@@ -17,11 +19,7 @@ export const TransferPage = () => {
           <ArrowBottomIcon />
         </div>
         <p className="text-caption2 text-text-secondary font-semibold">
-          Available balance :{' '}
-          {USER_DATA.balance.toLocaleString('ru-RU', {
-            style: 'currency',
-            currency: 'RUB',
-          })}
+          Available balance : {formatMoney(user.balance)}
         </p>
       </div>
       <div className="flex flex-col gap-4">
